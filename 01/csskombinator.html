@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container p {
+            color: red;
+        }
+
+        #container2 + p {
+            color: red;
+        }
+
+        #container2 > p:first-child {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- descendants selector -->
+    <div id="container">
+        <h3>Judul web application</h3>
+        <p>sample text</p>
+    </div>
+    
+    <div id="container2">
+        <h3>Judul web application</h3>
+        <p>sample text</p>
+        <p>sample text</p>
+    </div>
+    <p>sample text</p>
+    <p>sample text</p>
+    
+</body>
+</html>
