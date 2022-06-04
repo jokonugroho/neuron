@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="sudahdiload()">
+    <input type="text" name="nama" id="nama">
+
+    <select name="negara" id="negara">
+        <option value="1">Negara 1</option>
+        <option value="2">Negara 2</option>
+        <option value="3">Negara 3</option>
+        <option value="4">Negara 4</option>
+    </select>
+
+    <button name="btn" id="btn">klik saya</button>
+
+
+    <img src="../01/images/eskul.jpg" id="img" alt="foto" onmouseover="hoverme();">
+
+    <script>
+        function kliksaya() {
+            alert("button yang di klik");
+        }
+
+        function pilihnegara() {
+            alert('sudah pilih negara');
+        }
+
+        function ketik(){
+            console.log('ngetik');
+        }
+
+        function hoverme(){
+            console.log('di hoverme');
+            // gambar = document.getElementById('img');
+            // gambar.style.visibility = 'hidden';
+        }
+
+        function sudahdiload() {
+            console.log('di load');
+        }
+
+
+        document.getElementById('btn').addEventListener('click', kliksaya);
+        document.getElementById('negara').addEventListener('change', pilihnegara);
+        document.getElementById('nama').addEventListener('keypress', ketik);
+
+        hello = function hello() {
+            console.log('hello');
+        }
+
+        hello2 = () =>{
+
+            console.log('hello2');
+        }
+
+        (function(){
+            console.log('immediatly invoke function');
+        })();
+
+        hello();
+        hello2();
+    </script>
+</body>
+</html>

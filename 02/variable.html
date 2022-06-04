@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // type data
+
+        var nama  = "Joko Nugroho"; // string
+        var umur = 24; // interger
+        var sudahMenikah = false; // boolean
+        var anak = []; // array
+
+        console.log(nama);
+        console.log(umur);
+        console.log(sudahMenikah);
+        console.log(anak);
+
+        //type data object
+        const person = {
+            first_name: "joko",
+            last_name: "nugroho"    
+        }
+
+        console.log(typeof person);
+
+
+        const functionExample=(name)=>{
+            return 'hello world '+name
+        }
+
+        console.log(typeof functionExample);
+
+        var greeting = functionExample('joko')
+        console.log(greeting);
+
+        const functionbuathitung = (bil1, op, bil2) => {
+            bil1 = parseInt(bil1);
+            bil2 = parseInt(bil2);
+
+            if( op == '+'){
+                return bil1 + bil2;
+            }else if( op == '-'){
+                return bil1 - bil2;
+            }else if( op == '*'){
+                return bil1 * bil2;
+            }else if( op == '/'){
+                return bil1 / bil2;
+            }else{
+                return 'maaf anda kurang tampan';
+            }   
+            
+        }
+
+        var hitung = functionbuathitung("1" ,'+', 2);
+        console.log(hitung);
+    </script>
+</body>
+</html>
