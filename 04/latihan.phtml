@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan dropwdown</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<body>
+
+<form class="form-horizontal" id="form-submit" autocomplete="off" >
+    <div class="form-group row">
+        <label for="language" class="col-sm-3 col-form-label">Provinsi</label>
+        <div class="col-sm-9">
+            <select class="form-control custom-select" id="provinsi" name="provinsi" onchange="getCityListContact(this.value)" required>
+                <option value="-1">Pilih Provinsi</option>
+                <option value="1">Aceh</option>
+                <option value="2">Jawa Barat</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="language" class="col-sm-3 col-form-label">Kota/Kab</label>
+        <div class="col-sm-9">
+            <select class="form-control custom-select" id="kota" name="kota" required>
+        
+            </select>
+        </div>
+    </div>
+</form>
+    
+</body>
+</html>
+
+<script>
+    var cityList = new Array();
+    var provList = new Array();
+
+    // provList = <?php print_r(json_encode($arrayProv)); ?>;
+    // cityList = <?php print_r(json_encode($arrayCity)); ?>;
+
+    function getCityListContact(val) {
+        var r = GetChoice(val);
+        var arr = JSON.parse(r);
+
+        $('#kota').empty();
+        for (i = 0; i < arr.length; i++) {
+            $('#kota').append('<option value=' + arr[i]+ '>' + arr[i] + '</option>');
+        }
+    }
+    
+
+    function GetChoice(prov_id) {
+        $.ajax({
+            async: false,
+            cache: false,
+            type: "POST",
+            url: "http://localhost/neuron/04/data.php",
+            data: { prov_id: prov_id}
+            }).done(function( msg ) {
+                returned = msg;
+            });
+         return returned;
+    }
+</script>
