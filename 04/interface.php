@@ -23,4 +23,5 @@
 
     $crudBrg = new CrudBarang();
     echo $crudBrg->read('dasd');
+    echo $crudBrg->create('xzcxcxzc');
 ?>
